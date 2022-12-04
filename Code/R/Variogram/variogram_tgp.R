@@ -118,3 +118,23 @@ plotly::plot_ly(type="scatter", mode="lines+markers") %>%
   layout(title = "Variograms for Trans Gangetic Plain",
          xaxis=list(title="Spatial Lag (h)"),
          yaxis=list(title="Semivariance, gamma(h)", range=c(12,36)))
+
+# fit a model variogram
+# model/theoretical variogram
+# Free to choose! - This is art!
+# The default fitting method is weighted least squares.
+# Please read the gstat manual for employing OLS or maximum likelihood
+yield.fit.sp = fit.variogram(yield.vgm, model = vgm(10, "Sph",  0.5, 5))
+# View Results
+yield.fit.sp
+
+# plot both the fitted and experimental variograms together
+plot(yield.vgm, yield.fit.sp,
+     cex = 1.5, # size of marker
+     pch = 19,  # type of marker (filled circle)
+     lwd = 2,
+     xlab = "Spatial Lag (h)",
+     ylab = "Gamma(h) (Semi-variance)")
+
+# Goodness of fit, sum of squared errors
+attr(yield.fit.sp, "SSErr")
