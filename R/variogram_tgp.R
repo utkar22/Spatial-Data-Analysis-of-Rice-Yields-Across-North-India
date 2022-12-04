@@ -1,16 +1,17 @@
 library(plotly)
-library(gstat)
-library(sp) 
+library(gstat) # loads package gstat
+library(sp) # loads package sp
 library(haven)
 
-#use Final1.dta in STATA SPACE
 df <- read_dta("C:\\Users\\Utkarsh\\Documents\\homework\\SSSE\\Project\\Data\\Final2.dta")
-df <- subset(df, df$igp = "TGP")
+
+df <- subset(df, df$igp == "TGP")
+df <- subset(df, !is.na(df$caste))
+
+df.sp <- df # Note: <- operator is an 'equals' operator
+coordinates(df.sp) <- (~longitude+latitude) # objects that start with a '~' operator in R is called a 'formula'. i.e., ~ is R formula operator
 
 
-df.sp <- df
-
-coordinates(df.sp) <- (~longitude+latitude) operator
 
 
 #Experimental Variogram:
@@ -75,6 +76,20 @@ plot(yield.vgm.detrend.xy,
      main = "Variogram for yield data detrended on both latitude and longitude (Trans Indo-Gangetic Plain)"
 )
 
+#Remove the trend-4 (modeling trend along all explanatory variables)
+
+yield.vgm.detrend.full = variogram(lquintalperacre~longitude+latitude+soiltexture + soilperception + caste + residueb1 + owned + fym_wet + fym_dry + fertfreq + nitrogen_amt + phosphorus_amt + potassium_amt + zinc_amt + irrigated + insect + pest + herb, sp.data.in)
+
+plot(yield.vgm.detrend.full,
+     cex=1.5, # siz of marker
+     pch=19, # type of marker (filled circle)
+     xlab="Spatial Lag (h)",
+     ylab="Gamma(h), Semivariance",
+     type="b",
+     main = "Variogram for yield data detrended on all explanatory variables (Trans Indo-Gangetic Plain)"
+)
+
+
 
 #Plot all variograms on a single graph
 
@@ -88,6 +103,10 @@ plotly::plot_ly(type="scatter", mode="lines+markers") %>%
             x=~dist,
             y=~gamma,
             name="variogram_detrended_xy") %>%
+  add_trace(data=yield.vgm.detrend.full,
+            x=~dist,
+            y=~gamma,
+            name="variogram_detrended_full") %>%
   add_trace(data=yield.vgm.detrend.x,
             x=~dist,
             y=~gamma,
