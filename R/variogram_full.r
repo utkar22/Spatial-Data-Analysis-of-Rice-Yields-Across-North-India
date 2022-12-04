@@ -4,7 +4,7 @@ library(sp)
 library(haven)
 
 #use Final1.dta in STATA SPACE
-df <- read_dta("C:\\Users\\Utkarsh\\Documents\\homework\\SSSE\\Project\\Data\\Final1.dta")
+df <- read_dta("C:\\Users\\Utkarsh\\Documents\\homework\\SSSE\\Project\\Data\\Final2.dta")
 
 
 df.sp <- df
