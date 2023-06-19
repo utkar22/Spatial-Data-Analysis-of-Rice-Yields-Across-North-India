@@ -16,6 +16,20 @@ This repository contains an exploratory (spatial) data analysis report for rice 
 - Similar data for wheat is also available (Ajay et al. 2021)
 - Focus of analysis: Rice production
 
+## Explanation of Work Done
+The analysis report in this repository explores the spatial patterns and factors influencing rice yields in the Indo-Gangetic Plains during the 2018-19 season. The main objectives of the analysis include:
+
+1. **Crop Yield Analysis:** Examining the overall distribution of rice yields and identifying high and low-yield areas within the study region.
+
+2. **Spatial Heterogeneity in Crop Yields:** Investigating the sources of spatial heterogeneity in rice yields and exploring the relationship between yields and various geographic and environmental factors.
+
+3. **Sub-Agroecological Zones Analysis:** Dividing the study region into sub-agroecological zones and analyzing the differences in yields and yield determinants across these zones.
+
+4. **Input Application Analysis:** Assessing the impact of different input applications, such as fertilizer usage and irrigation practices, on rice yields and identifying potential opportunities for improvement.
+
+Please refer to the report for detailed information, data visualizations, and findings related to the above analyses.
+
+
 ## Report Outline
 The report is divided into the following sections:
 
