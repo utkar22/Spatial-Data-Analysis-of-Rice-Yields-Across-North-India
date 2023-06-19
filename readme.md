@@ -41,15 +41,4 @@ The report is divided into the following sections:
 
 Please refer to the report for detailed information and findings.
 
-## Usage Instructions
-To replicate the analysis or explore the data further, please refer to the Jupyter Notebook provided in this repository.
-
-## License
-The dataset and analysis are provided under the terms of the [MIT License](LICENSE).
-
-## Citation
-If you find this analysis or dataset useful, please cite the following papers:
-- Ajay et al. (2022) - Sampling Design
-- Ajay et al. (2021) - Wheat Data
-
 Feel free to reach out to the contributors for any questions or clarifications.
