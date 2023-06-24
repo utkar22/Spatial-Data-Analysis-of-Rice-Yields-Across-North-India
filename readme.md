@@ -45,6 +45,6 @@ Feel free to reach out to the contributors for any questions or clarifications.
 
 ## Report
 
-![Page 1](Report/SSSE%20PPT_Final_01.png)
-![Page 2](Report/SSSE%20PPT_Final_02.png)
-![Page 3](Report/SSSE%20PPT_Final_03.png)
+![Page 1](Report/SSSE%20PPT_Final_01.jpg)
+![Page 2](Report/SSSE%20PPT_Final_02.jpg)
+![Page 3](Report/SSSE%20PPT_Final_03.jpg)
